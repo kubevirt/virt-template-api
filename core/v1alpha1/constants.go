@@ -17,15 +17,20 @@
  *
  */
 
-package api
+package v1alpha1
+
+import templateapi "kubevirt.io/virt-template-api/core"
 
 const (
-	// GroupName is the group name used in this package
-	GroupName            = "template.kubevirt.io"
-	SubresourceGroupName = "subresources.template.kubevirt.io"
+	FinalizerSnapshotCleanup = templateapi.GroupName + "/SnapshotCleanup"
+	LabelRequestUID          = templateapi.GroupName + "/RequestUID"
 
-	SingularResourceName        = "virtualmachinetemplate"
-	PluralResourceName          = SingularResourceName + "s"
-	SingularRequestResourceName = "virtualmachinetemplaterequest"
-	PluralRequestResourceName   = SingularRequestResourceName + "s"
+	ConditionReady       = "Ready"
+	ConditionProgressing = "Progressing"
+
+	ReasonReconciled           = "Reconciled"
+	ReasonReconciling          = "Reconciling"
+	ReasonInvalidConfiguration = "InvalidConfiguration"
+	ReasonFailed               = "Failed"
+	ReasonWaiting              = "Waiting"
 )
